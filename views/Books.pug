@@ -2,15 +2,16 @@ extends layout
 
 block content
   h1= title
-  - let results = [
-    { book_title: "Alone", book_author: "Megan E. Freeman", book_rating: 4.6 },
-    { book_title: "To Kill a Mockingbird", book_author: "Harper Lee", book_rating: 4.5 },
-    { book_title: "1984", book_author: "George Orwell", book_rating: 4.7 }
-  ]
-  div(class="container-fluid")
-    div(class="row")
+  - let results = []
+  -results.push({book_title:"Alone", book_author:"Megan E. Freeman", book_rating: 4.6})
+  -results.push({book_title:"To Kill a Mockingbird", book_author:"Harper Lee", book_rating:4.5})
+  -results.push({book_title:"1984", book_author:"George Orwell", book_rating: 4.7})
+
+  .container-fluid
+    .row
       each book in results
-        div(class="col-sm-2")
-          p Book:#{book.book_title}
+        .col-sm-2
+          p Book: #{book.book_title}
           p Author: #{book.book_author}
           p Rating: #{book.book_rating}
+
