@@ -4,5 +4,13 @@ block content
   h1= title
   p Welcome to #{title}
   p How are you?
-  <button type="button" class="btn btn-secondary">I am a button</button>
-
+  button(type="button" class="btn btn-info" onclick="double()") Click me
+  div(id="double") Up the amount
+  script.
+    var value = 0;
+    var power = 1;
+    function double() {
+      value += 1;
+      power *= 2;
+      document.getElementById("double").innerText = `Two to the power ${value} is ${Math.pow(2, power)}`;
+    }
